@@ -30,6 +30,7 @@
 #include "displayapp/screens/PassKey.h"
 #include "displayapp/screens/Error.h"
 #include "displayapp/screens/Weather.h"
+#include "displayapp/screens/TodoistViewer.h"
 
 #include "drivers/Cst816s.h"
 #include "drivers/St7789.h"
@@ -521,6 +522,9 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
       break;
     case Apps::Twos:
       currentScreen = std::make_unique<Screens::Twos>();
+      break;
+    case Apps::TodoistViewer:
+      currentScreen = std::make_unique<Screens::TodoistViewer>(); //TODO: fill in args here
       break;
     case Apps::Paint:
       currentScreen = std::make_unique<Screens::InfiniPaint>(lvgl, motorController);
